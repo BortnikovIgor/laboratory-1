@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изменение стилей</title>
+    <style>
+        #styledElement {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            border: 2px solid black;
+            transition: all 0.3s ease;
+        }
+        .newStyle {
+            background-color: coral;
+            border-radius: 20px;
+            transform: rotate(10deg);
+        }
+    </style>
+</head>
+<body>
+
+<button id="toggleButton">Изменить стиль</button>
+<div id="styledElement"></div>
+
+<script>
+    const toggleButton = document.getElementById('toggleButton');
+    const styledElement = document.getElementById('styledElement');
+    let isStyled = false;
+
+    toggleButton.addEventListener('click', () => {
+        if (isStyled) {
+            styledElement.classList.remove('newStyle');
+        } else {
+            styledElement.classList.add('newStyle');
+        }
+        isStyled = !isStyled;
+    });
+</script>
+
+</body>
+</html>
